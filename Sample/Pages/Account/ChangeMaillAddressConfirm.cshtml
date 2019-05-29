@@ -1,0 +1,59 @@
+﻿@page
+@model TheMyAsk.Web.Pages.Account.ChangeMaillAddressConfirm
+@{
+    ViewData["Title"] = "ChangeMaillAddressConfirm";
+}
+<style type="text/css">
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="container">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <form method="post">
+                <div class="card mb-3">
+                    <article class="card-body">
+                        <h4 class="card-title">ChangeMaillAddressConfirm</h4>
+                        <hr>
+                        @if (!this.Model.Request.Query.ContainsKey("mailaddress"))
+                        {
+                            <div class="form-group">
+                                <label asp-for="Input.NewMailAddress" class="control-label">NewMailAddress</label>
+                                <input asp-for="Input.NewMailAddress" type="email" class="form-control form-control-sm" placeholder="sample@themyask.com" />
+                                <span asp-validation-for="Input.NewMailAddress" class="text-danger"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <input asp-for="Input.NewMailAddress" type="hidden" />
+                        }
+                        <div class="form-group">
+                            <label asp-for="Input.Code" class="control-label">Code</label>
+                            <input asp-for="Input.Code" type="number" class="form-control form-control-sm" placeholder="999999" />
+                            <span asp-validation-for="Input.Code" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-0">
+                            <input type="submit" asp-action="Confirm" value="Send" class="btn btn-sm btn-primary btn-block">
+                        </div>
+                    </article>
+                </div>
+                <div class="card mb-3">
+                    <article class="card-body">
+                        <div class="form-group mb-0">
+                            <input type="submit" asp-action="ReSend" value="ReSend" class="btn btn-sm btn-primary btn-block">
+                        </div>
+                    </article>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg"></div>
+    </div>
+</div>

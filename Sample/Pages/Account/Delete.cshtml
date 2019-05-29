@@ -1,0 +1,30 @@
+﻿@page
+@model TheMyAsk.Web.Pages.Account.Delete
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <div class="card mb-3">
+                <article class="card-body">
+                    <h4 class="card-title">Delete</h4>
+                    <hr>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="Input.Password" class="control-label">Password</label>
+                            <input asp-for="Input.Password" type="password" class="form-control form-control-sm" placeholder="9&5jMcC8ez" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-0">
+                            <input type="submit" value="Send" class="btn btn-sm btn-primary btn-block">
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <div class="col-lg"></div>
+    </div>
+</div>

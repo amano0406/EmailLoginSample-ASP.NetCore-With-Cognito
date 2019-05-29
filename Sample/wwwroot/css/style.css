@@ -1,0 +1,41 @@
+@charset "UTF-8";
+body {
+    font-size: .75em;
+}
+.navbar-brand {
+    font-size: 1.50em;
+}
+
+.badge {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.col-form-label-sm {
+    font-size: 100%;
+}
+
+.form-control-sm {
+    font-size: 100%;
+}
+
+.pagination-sm {
+    font-size: 100%;
+}
+
+.pagination-sm .page-link {
+    font-size: 100%;
+}
+
+.btn {
+    font-size: 100%;
+}
+
+.btn-sm {
+	padding: 0.25rem 1.5rem;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}

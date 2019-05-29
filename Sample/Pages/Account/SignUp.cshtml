@@ -1,0 +1,45 @@
+﻿@page
+@model TheMyAsk.Web.Pages.Account.SignUp
+@{
+    ViewData["Title"] = "SignUp";
+}
+<div class="container">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <div class="card mb-3">
+                <article class="card-body">
+                    <h4 class="card-title">SignUp</h4>
+                    <hr>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="Input.MailAddress" class="control-label">MailAddress</label>
+                            <input asp-for="Input.MailAddress" type="email" class="form-control form-control-sm" placeholder="sample@themyask.com" />
+                            <span asp-validation-for="Input.MailAddress" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.NickName" class="control-label">NickName</label>
+                            <input asp-for="Input.NickName" type="text" class="form-control form-control-sm" placeholder="ザマイスク" />
+                            <span asp-validation-for="Input.NickName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.NewPassword" class="control-label">NewPassword</label>
+                            <input asp-for="Input.NewPassword" type="password" class="form-control form-control-sm" placeholder="9&5jMcC8ez" />
+                            <span asp-validation-for="Input.NewPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword" class="control-label">ConfirmPassword</label>
+                            <input asp-for="Input.ConfirmPassword" type="password" class="form-control form-control-sm" placeholder="9&5jMcC8ez" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-0">
+                            <input type="submit" value="Send" class="btn btn-sm btn-primary btn-block">
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <div class="col-lg"></div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using Amazon.Extensions.CognitoAuthentication
+@inject SignInManager<CognitoUser> SignInManager
+@inject UserManager<CognitoUser> UserManager
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <dl>
+        <dt>Account</dt>
+        <dd>
+            <ul>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li>
+                        <a asp-area="" asp-page="Account/SignOut">SignOut</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/ChangePassword">ChangePassword</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/ChangeMaillAddress">ChangeMaillAddress</a>It does not go well
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/ChangeMaillAddressConfirm">ChangeMaillAddressConfirm</a>It does not go well
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/Delete">Delete</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a asp-area="" asp-page="Account/SignUp">SignUp</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/SignUpConfirm">SignUpConfirm</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/SignIn">SignIn</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/ResetPassword">ResetPassword</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="Account/ResetPasswordConfirm">ResetPasswordConfirm</a>
+                    </li>
+                }
+            </ul>
+        </dd>
+        <dt>議題</dt>
+        <dd>
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="C_議題" asp-action="追加">追加</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="C_議題" asp-action="編集">編集</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="C_議題" asp-action="削除">削除</a>
+                </li>
+            </ul>
+        </dd>
+        <dt>結果</dt>
+        <dd>
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="C_結果" asp-action="追加">追加</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="C_結果" asp-action="編集">編集</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="C_結果" asp-action="削除">削除</a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>
