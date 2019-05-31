@@ -1,4 +1,4 @@
-# EmailLoginSample-Aps.NETCore-Cognito
+# EmailLoginSample-ASP.NetCore-With-Cognito
 Anyone can change
 ***
 Development  
